@@ -3,6 +3,8 @@ import { createBrowserRouter,ScrollRestoration, RouterProvider, Outlet } from "r
 import Navbar from "./common/Navbar";
 import Footer from "./common/Footer";
 import Home from "./page/home/Home";
+import ContactUs from "./page/contact/Contact";
+import AboutPage from "./page/about/Aboutus";
 // import AboutUs from "./page/about/About";
 const Layout = () => {
   return (
@@ -23,10 +25,14 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
-      // {
-      //   path: "/about",
-      //   element: <AboutUs />,
-      // },
+      {
+        path: "/contact",
+        element: <ContactUs />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
     ],
   },
 ]);

@@ -23,9 +23,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -45,7 +43,7 @@ const Navbar = () => {
     { name: "Services", path: "/services" },
     { name: "Gallery", path: "/gallery" },
     { name: "Blogs", path: "/blogs" },
-    { name: "Contact", path: "/contact" },
+    { name: "Contact", path: "/Contact" },
   ];
 
   return (
@@ -132,6 +130,61 @@ const Navbar = () => {
           </ul>
         )}
       </nav>
+
+      {/* ================= MODAL FORM ================= */}
+      {showForm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          {/* Background Blur */}
+          <div
+            className="absolute inset-0 bg-black/40 backdrop-blur-sm"
+            onClick={() => setShowForm(false)}
+          ></div>
+
+          {/* Form Box */}
+          <div className="relative bg-white rounded-2xl shadow-2xl w-[90%] max-w-lg p-8 z-50 animate-fadeIn">
+            <button
+              onClick={() => setShowForm(false)}
+              className="absolute top-3 right-3 text-gray-500 hover:text-[#BB0F02] text-xl"
+            >
+              &times;
+            </button>
+
+            <h2 className="text-2xl font-bold mb-6 text-center text-[#BB0F02]">
+              Get a Quote
+            </h2>
+
+            <form className="space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-[#BB0F02]"
+              />
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-[#BB0F02]"
+              />
+              <input
+                type="text"
+                placeholder="Phone Number"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-[#BB0F02]"
+              />
+              <textarea
+                rows="4"
+                placeholder="Message"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-[#BB0F02]"
+              ></textarea>
+
+              <button
+                type="submit"
+                className="w-full bg-[#BB0F02] text-white py-2 rounded-lg font-semibold hover:bg-[#a10c00] transition-all"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 };

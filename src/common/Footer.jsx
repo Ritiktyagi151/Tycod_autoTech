@@ -156,14 +156,14 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-sm flex flex-col gap-2">
               {[
-                'Engine Mount Brackets',
-                'Transmission Housings',
-                'Clutch & Brake Components',
-                'Cylinder Head Covers',
-                'Compressor Housings',
-                'EV Motor Housings',
-                'Precision Castings',
-                'Machined Auto Components',
+                'Red Hero Honda',
+                'Activa 6G',
+                'Rbd Activa New Model',
+                'Fbd Hero Honda ',
+                'Scooty Pep',
+                'Rbd Yamaha',
+                'Fbd Yamaha',
+                'Fbd Super Splender',
               ].map((item, index) => (
                 <li key={index} className="border-b border-gray-500 group overflow-hidden">
                   <a
@@ -207,11 +207,11 @@ const Footer = () => {
                 <div className="ml-3">
                   <h4 className="font-semibold text-gray-200 text-sm sm:text-base">Call Us</h4>
                   <p className="mt-1 hover:text-[#B80600] transition-colors text-sm sm:text-base">
-                    <a href="tel:+919891257954">+91 9891257954</a>
+                    <a href="tel:+9990698236">+91 9990698236</a>
                   </p>
-                  <p className="mt-1 hover:text-[#B80600] transition-colors text-sm sm:text-base">
+                  {/* <p className="mt-1 hover:text-[#B80600] transition-colors text-sm sm:text-base">
                     <a href="tel:+919810997795">+91 9810997795</a>
-                  </p>
+                  </p> */}
                 </div>
               </div>
 
@@ -236,11 +236,11 @@ const Footer = () => {
                 <div className="ml-3">
                   <h4 className="font-semibold text-gray-200 text-sm sm:text-base">Email Us</h4>
                   <p className="mt-1 hover:text-[#B80600] transition-colors text-sm sm:text-base">
-                    <a href="mailto:sales@polypackenterprises.com"></a>
+                    <a href="mailto:daksh@tycod.in ">daksh@tycod.in </a>
                   </p>
-                  <p className="mt-1 hover:text-[#B80600] transition-colors text-sm sm:text-base">
+                  {/* <p className="mt-1 hover:text-[#B80600] transition-colors text-sm sm:text-base">
                     <a href="mailto:info@polypackenterprises.com"></a>
-                  </p>
+                  </p> */}
                 </div>
               </div>
 
