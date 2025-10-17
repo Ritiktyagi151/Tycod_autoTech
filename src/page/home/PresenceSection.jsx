@@ -30,11 +30,11 @@ const PresenceSection = () => {
   const [selected, setSelected] = useState(0);
 
   return (
-    <section className="w-full bg-white py-4">
+    <section className="w-full bg-gray-200 py-4">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-start gap-10">
         {/* LEFT - Swiper */}
         <div className="w-full lg:w-1/2">
-          <h2 className="text-4xl lg:text-4xl font-extrabold text-[#0b3b6b] mb-10">
+          <h2 className="text-4xl lg:text-4xl font-extrabold text-[#B91C1C] mb-10">
             Our Presence
           </h2>
 

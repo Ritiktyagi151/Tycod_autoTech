@@ -13,8 +13,8 @@ const Home = () => {
       <Herosection />
       <About/>
       <Product/>
-      <Whatwedo/>
       <PresenceSection/>
+      <Whatwedo/>
       <ComponentManufacturers/>
       <Testimonials/>
       <Blog/>

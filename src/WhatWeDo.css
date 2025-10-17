@@ -1,0 +1,101 @@
+/* WhatWeDo.css */
+
+/* Container for the cards */
+.what-we-do-container {
+  max-width: 1000px; /* Adjust as needed */
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem; /* Tailwind-like gap */
+  padding: 0 1rem; /* Adjust padding for smaller screens */
+}
+
+/* Individual Card Styles */
+.what-we-do-card {
+  position: relative;
+  width: 300px; /* Fixed width for the card */
+  height: 400px; /* Fixed height for the card */
+  background: #fff;
+  transform-style: preserve-3d; /* Crucial for 3D effect */
+  transform: perspective(2000px); /* Perspective for the 3D view */
+  transition: 1s; /* Animation duration for card tilt */
+  box-shadow: inset 100px 0 50px rgba(0, 0, 0, 0.2); /* Initial inner shadow */
+  border-radius: 0.5rem; /* Tailwind-like rounded corners */
+  overflow: hidden; /* Ensures content stays within bounds */
+}
+
+.what-we-do-card:hover {
+  z-index: 10; /* Bring hovered card to front */
+  transform: perspective(2000px) rotate(-10deg); /* Tilt effect on hover */
+  box-shadow: inset 20px 0 50px rgba(0, 0, 0, 0.5); /* Deeper inner shadow on hover */
+}
+
+/* Image Container (Front face of the card) */
+.what-we-do-card .img-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #e5e7eb; /* Light border similar to Tailwind's border-gray-200 */
+  box-sizing: border-box;
+  transform-origin: left; /* Pivot point for the flip */
+  z-index: 1;
+  transition: 1s; /* Animation duration for the flip */
+  border-radius: 0.5rem; /* Match card border-radius */
+  overflow: hidden;
+}
+
+.what-we-do-card .img-container img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Ensures image covers the area without distortion */
+  border-radius: 0.5rem; /* Match card border-radius */
+}
+
+/* Flip effect on hover */
+.what-we-do-card:hover .img-container {
+  transform: rotateY(-135deg); /* Flips the image container on hover */
+}
+
+/* Card Details (Back face of the card) */
+.what-we-do-card .card-details {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%; /* Ensure it covers the whole card */
+  height: 100%; /* Ensure it covers the whole card */
+  box-sizing: border-box;
+  padding: 1.5rem; /* Tailwind-like padding */
+  color: #374151; /* Dark gray text similar to Tailwind's text-gray-700 */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  text-align: left; /* Keep text aligned left */
+}
+
+/* Specific styling for h2/h3 inside card-details for consistency */
+.what-we-do-card .card-details h3 {
+  margin-top: 0;
+  margin-bottom: 1rem; /* Space below title */
+  text-transform: capitalize; /* Changed from uppercase to capitalize, looks better with titles */
+  font-size: 1.5rem; /* Text-2xl equivalent */
+  line-height: 2rem; /* Tailwind leading-8 */
+  color: #b91c1c; /* Matching your theme red */
+}
+
+.what-we-do-card .card-details p {
+  margin-bottom: 1rem; /* Space below paragraph */
+  line-height: 1.6; /* Tailwind leading-relaxed equivalent */
+  font-size: 1rem; /* Text-base equivalent */
+}
+
+/* Media queries for responsiveness (optional, but good practice) */
+@media (max-width: 768px) {
+  .what-we-do-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
