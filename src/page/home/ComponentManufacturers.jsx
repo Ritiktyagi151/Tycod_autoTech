@@ -17,7 +17,7 @@ export default function ComponentManufacturers() {
         <div className="flex flex-col justify-start lg:w-1/4">
           <h3 className="text-2xl font-bold text-[#1b3358] mb-6">The Problem</h3>
 
-          <div className="bg-white shadow-md rounded-2xl p-6 mb-6 border border-gray-100">
+          <div className="bg-white shadow-md rounded-2xl p-6 mb-6 border-b-4 border-[#BC0600]">
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100">
                 <i className="fa-solid fa-box-open text-gray-500"></i>
@@ -28,7 +28,7 @@ export default function ComponentManufacturers() {
             </div>
           </div>
 
-          <div className="bg-white shadow-md rounded-2xl p-6 mb-6 border border-gray-100">
+          <div className="bg-white shadow-md rounded-2xl p-6 mb-6 border-b-4 border-[#BC0600]">
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100">
                 <i className="fa-solid fa-globe text-gray-500"></i>
@@ -39,7 +39,7 @@ export default function ComponentManufacturers() {
             </div>
           </div>
 
-          <div className="bg-white shadow-md rounded-2xl p-6 border border-gray-100">
+          <div className="bg-white shadow-md rounded-2xl p-6 border-b-4 border-[#BC0600]">
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100">
                 <i className="fa-solid fa-network-wired text-gray-500"></i>
@@ -54,18 +54,18 @@ export default function ComponentManufacturers() {
         {/* Middle - Two Maps Side by Side */}
         <div className="flex flex-row justify-between items-center gap-6 mt-10 lg:mt-0 lg:w-1/2">
           {/* Left Map */}
-          <div className="w-1/2 rounded-2xl overflow-hidden shadow-lg border border-yellow-400 bg-yellow-400 p-1">
+          <div className="w-1/2 rounded-2xl overflow-hidden shadow-lg border border-[#BC0600]  p-1">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/2/2f/India-locator-map-blue.svg"
+              src="https://cpimg.tistatic.com/04660431/s/4/Scooter-Components.jpg"
               alt="India Map Left"
               className="w-full h-auto rounded-xl"
             />
           </div>
 
           {/* Right Map */}
-          <div className="w-1/2 rounded-2xl overflow-hidden shadow-lg border border-yellow-400 bg-yellow-400 p-1">
+          <div className="w-1/2 rounded-2xl overflow-hidden shadow-lg border border-[#BC0600]  p-1">
             <img
-              src="https://upload.wikimedia.org/wikipedia/commons/2/2f/India-locator-map-blue.svg"
+              src="https://tiimg.tistatic.com/new_website1/micro_cate_images/2/b/10/24110.jpg"
               alt="India Map Right"
               className="w-full h-auto rounded-xl"
             />
@@ -76,7 +76,7 @@ export default function ComponentManufacturers() {
         <div className="flex flex-col justify-start lg:w-1/4">
           <h3 className="text-2xl font-bold text-[#1b3358] mb-6">Our Solution</h3>
 
-          <div className="bg-white shadow-md rounded-2xl p-6 mb-6 border-b-4 border-yellow-300">
+          <div className="bg-white shadow-md rounded-2xl p-6 mb-6 border-b-4 border-[#BC0600]">
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100">
                 <i className="fa-solid fa-shipping-fast text-gray-500"></i>
@@ -87,7 +87,7 @@ export default function ComponentManufacturers() {
             </div>
           </div>
 
-          <div className="bg-white shadow-md rounded-2xl p-6 mb-6 border-b-4 border-yellow-300">
+          <div className="bg-white shadow-md rounded-2xl p-6 mb-6 border-b-4 border-[#BC0600]">
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100">
                 <i className="fa-solid fa-map-marked-alt text-gray-500"></i>
@@ -98,7 +98,7 @@ export default function ComponentManufacturers() {
             </div>
           </div>
 
-          <div className="bg-white shadow-md rounded-2xl p-6 border-b-4 border-yellow-300">
+          <div className="bg-white shadow-md rounded-2xl p-6 border-b-4 border-[#BC0600]">
             <div className="flex items-start gap-3">
               <div className="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-100">
                 <i className="fa-solid fa-magnifying-glass-chart text-gray-500"></i>

@@ -4,10 +4,10 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-// Sample posts data
+// Sample posts data with random images
 const posts = [
   {
-    img: "",
+    img: "https://source.unsplash.com/400x300/?car,auto",
     tag: "DIE CASTING",
     title: "High-precision aluminium die-cast components for automotive needs",
     author: "Tycod Autotech",
@@ -16,7 +16,7 @@ const posts = [
     comments: 0,
   },
   {
-    img: "",
+    img: "https://source.unsplash.com/400x300/?engine,car",
     tag: "AUTO PARTS",
     title: "Supplying premium components to Tata Motors, Honda, Maruti & Hero MotoCorp",
     author: "Tycod Autotech",
@@ -25,7 +25,7 @@ const posts = [
     comments: 1,
   },
   {
-    img: "",
+    img: "https://source.unsplash.com/400x300/?machining,workshop",
     tag: "MACHINING",
     title: "Precision machining solutions for complex automotive parts",
     author: "Tycod Autotech",
@@ -34,7 +34,7 @@ const posts = [
     comments: 0,
   },
   {
-    img: "",
+    img: "https://source.unsplash.com/400x300/?quality,industrial",
     tag: "QUALITY",
     title: "Committed to delivering high-quality, durable auto components",
     author: "Tycod Autotech",
@@ -43,7 +43,7 @@ const posts = [
     comments: 0,
   },
   {
-    img: "",
+    img: "https://source.unsplash.com/400x300/?innovation,technology",
     tag: "INNOVATION",
     title: "Innovative solutions in aluminium die casting since 1984",
     author: "Tycod Autotech",
@@ -52,7 +52,7 @@ const posts = [
     comments: 2,
   },
   {
-    img: "",
+    img: "https://source.unsplash.com/400x300/?factory,production",
     tag: "OEM SUPPLY",
     title: "Trusted supplier for major OEMs across India",
     author: "Tycod Autotech",
@@ -61,7 +61,7 @@ const posts = [
     comments: 0,
   },
   {
-    img: "",
+    img: "https://source.unsplash.com/400x300/?aluminium,parts",
     tag: "ALUMINIUM PARTS",
     title: "Delivering lightweight, high-performance aluminium components",
     author: "Tycod Autotech",
@@ -70,7 +70,7 @@ const posts = [
     comments: 1,
   },
   {
-    img: "",
+    img: "https://source.unsplash.com/400x300/?engineering,expertise",
     tag: "EXPERTISE",
     title: "Over 40 years of expertise in die casting and machining",
     author: "Tycod Autotech",
@@ -84,9 +84,7 @@ export default function PostsCarousel() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
-  // No need for swiperReady state; refs are stable and can be used directly
   useEffect(() => {
-    // Ensure refs are attached (optional, for debugging)
     if (prevRef.current && nextRef.current) {
       console.log("Navigation refs are set");
     }
@@ -120,7 +118,6 @@ export default function PostsCarousel() {
             nextEl: nextRef.current,
           }}
           onSwiper={(swiper) => {
-            // Ensure navigation is updated after Swiper initialization
             setTimeout(() => {
               swiper.navigation.update();
             }, 0);
@@ -131,7 +128,7 @@ export default function PostsCarousel() {
             <SwiperSlide key={index}>
               <div className="bg-white rounded-md shadow-md overflow-hidden h-[330px] flex flex-col">
                 <img
-                  src={post.img || "https://via.placeholder.com/150"} // Fallback image
+                  src={post.img}
                   alt={post.title}
                   className="w-full h-48 object-cover"
                 />

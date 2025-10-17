@@ -173,8 +173,8 @@ export default function AboutPage() {
 
     {/* Right Image Section */}
     <div className="flex">
-      <div className="relative w-full h-[80vh]">
-          <img src="https://img.freepik.com/premium-photo/composition-new-bolts-nuts-different-sizes-gray-background_268192-4291.jpg" className="object-cover"></img>
+      <div className="relative ">
+          <img src="https://img.freepik.com/premium-photo/composition-new-bolts-nuts-different-sizes-gray-background_268192-4291.jpg" className="object-cover h-[80vh]  w-full"></img>
       </div>
     </div>
   </div>

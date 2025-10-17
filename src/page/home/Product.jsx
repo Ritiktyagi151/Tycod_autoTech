@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 
 export default function Product() {
+<<<<<<< HEAD
   const products = [
     {
       img: "/assets/image/product/RBD-HERO-HONDA.png",
@@ -58,21 +59,73 @@ export default function Product() {
       desc: "Top engine cover for Suzuki 4-stroke models, combining durability with easy maintenance and sleek design.",
     },
   ];
+=======
+const products = [
+  {
+    img: "/assets/image/product/RBD-HERO-HONDA.png",
+    title: "Red Hero Honda",
+    desc: "High-quality rear engine cover crafted for Hero Honda models, ensuring enhanced protection and long-term performance.",
+  },
+  {
+    img: "/assets/image/product/ACTIVA-6G.png",
+    title: "Activa 6G",
+    desc: "Premium-grade front engine cover for Activa 6G, offering perfect fit, corrosion resistance, and stylish finish.",
+  },
+  {
+    img: "/assets/image/product/RBD-ACTIVA-NEW-MODEl.png",
+    title: "Rbd Activa New Model",
+    desc: "Rear half crankcase designed for the latest Activa model, providing precision alignment and superior strength.",
+  },
+  {
+    img: "/assets/image/product/FBD-HERO-HONDA.png",
+    title: "Fbd Hero Honda",
+    desc: "Durable 4-stroke rear housing made for Hero Honda models, delivering improved stability and vibration control.",
+  },
+  {
+    img: "/assets/image/product/SCOOTY-PEP.png",
+    title: "Scooty Pep",
+    desc: "Accurately machined bracket suitable for Scooty Pep, ensuring firm sensor placement and better performance.",
+  },
+  {
+    img: "/assets/image/product/RBD-YAMAHA.png",
+    title: "Rbd Yamaha",
+    desc: "Front engine cover for Yamaha models, made from high-grade aluminum for lightweight strength and durability.",
+  },
+  {
+    img: "/assets/image/product/FBD-YAMAHA.png",
+    title: "Fbd Yamaha",
+    desc: "Precision front cover for Yamaha 4-stroke variants, designed to reduce oil leaks and improve engine efficiency.",
+  },
+  {
+    img: "/assets/image/product/FBD-SUPER-SPLENDER.png",
+    title: "Fbd Super Splender",
+    desc: "Reliable lock plate engineered for Super Splendor models, ensuring tight engine assembly and secure fitting.",
+  },
+  {
+    img: "/assets/image/product/CLUTCH-COVER-70CC.png",
+    title: "Clutch Cover 70CC",
+    desc: "High-performance clutch cover for 70CC bikes, designed for perfect sealing and smooth clutch operation.",
+  },
+  {
+    img: "/assets/image/product/RR-SUZUKI.png",
+    title: "RR Suzuki",
+    desc: "Top engine cover for Suzuki 4-stroke models, combining durability with easy maintenance and sleek design.",
+  }
+];
+
+>>>>>>> bb0535b (create to section)
 
   return (
-    <div
-      className="w-full bg-fixed py-4 mt-24 flex flex-col items-center bg-gray-100 bg-cover bg-center"
-      style={{
-        backgroundImage:
-          "url('/assets/image/background-img/scene-with-photorealistic-logistics-operations-proceedings.jpg')",
-      }}
-    >
+<div
+  className="w-full py-4 mt-24 flex flex-col items-center bg-gray-100 bg-cover bg-center"
+  style={{ backgroundImage: "url('/assets/image/background-img/scene-with-photorealistic-logistics-operations-proceedings.jpg')" }}
+>
       {/* Section Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-2xl md:text-2xl font-bold text-center text-white backdrop-blur-sm px-2 mb-4"
+        className="text-2xl md:text-xl font-bold text-center text-gray-800 bg-white/45 px-2 rounded-sm mb-4"
       >
         Explore Our Full Product Range
       </motion.h2>
@@ -106,7 +159,7 @@ export default function Product() {
                 <img
                   src={item.img}
                   alt={item.title}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-64 object-contain"
                 />
                 <div className="p-5 text-center">
                   <h3 className="text-xl font-semibold text-gray-800 mb-2">
