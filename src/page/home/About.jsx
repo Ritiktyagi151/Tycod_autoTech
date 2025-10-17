@@ -34,11 +34,13 @@ export default function AboutUs() {
     <section className="w-full h-[390px] bg-white grid grid-cols-2 relative">
       {/* Heading Slider */}
       <header className="absolute top-0 left-0 w-full bg-[#F3F4F6] text-black text-center py-3 z-10 animate-slide-in-down">
-        <h1 className="text-4xl font-bold tracking-wider" style={{ fontFamily: "Arial Black, sans-serif" }}>
+        <h1
+          className="text-4xl font-bold tracking-wider"
+          style={{ fontFamily: "Arial Black, sans-serif" }}
+        >
           {content[activeIndex].title}
         </h1>
       </header>
-      
 
       {/* Left Section: Image + Social Icons */}
       <div className="relative bg-[#F3F4F6] flex flex-col items-center justify-start p-4 pt-16 animate-slide-in-left">
@@ -94,7 +96,9 @@ export default function AboutUs() {
             {content.map((_, index) => (
               <div
                 key={index}
-                className={`w-16 h-0.5 cursor-pointer transition ${activeIndex === index ? "bg-black" : "bg-gray-400"}`}
+                className={`w-16 h-0.5 cursor-pointer transition ${
+                  activeIndex === index ? "bg-black" : "bg-gray-400"
+                }`}
                 onClick={() => setActiveIndex(index)}
               ></div>
             ))}
@@ -104,12 +108,45 @@ export default function AboutUs() {
 
       {/* Animations */}
       <style jsx>{`
-        @keyframes slideInLeft { from { transform: translateX(-100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        @keyframes slideInRight { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        @keyframes slideInDown { from { transform: translateY(-100%); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .animate-slide-in-left { animation: slideInLeft 1s ease-out forwards; }
-        .animate-slide-in-right { animation: slideInRight 1s ease-out forwards; }
-        .animate-slide-in-down { animation: slideInDown 1s ease-out forwards; }
+        @keyframes slideInLeft {
+          from {
+            transform: translateX(-100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+        @keyframes slideInRight {
+          from {
+            transform: translateX(100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+        @keyframes slideInDown {
+          from {
+            transform: translateY(-100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+        .animate-slide-in-left {
+          animation: slideInLeft 1s ease-out forwards;
+        }
+        .animate-slide-in-right {
+          animation: slideInRight 1s ease-out forwards;
+        }
+        .animate-slide-in-down {
+          animation: slideInDown 1s ease-out forwards;
+        }
       `}</style>
     </section>
   );

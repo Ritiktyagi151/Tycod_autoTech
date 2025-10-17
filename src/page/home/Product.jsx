@@ -6,6 +6,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 
 export default function Product() {
+<<<<<<< HEAD
 const products = [
   {
     img: "/assets/image/product/RBD-HERO-HONDA.png",
@@ -59,18 +60,75 @@ const products = [
   }
 ];
 
+=======
+  const products = [
+    {
+      img: "/images/scorty-auto-parts/rear-cover-4s.jpg",
+      title: "Rear Cover-4S",
+      desc: "Durable rear engine cover designed for 4-stroke engines, ensuring better protection and heat resistance.",
+    },
+    {
+      img: "/images/scorty-auto-parts/front-cover-1ton.jpg",
+      title: "Front Cover-1Ton",
+      desc: "Robust front cover designed for heavy-duty 1-ton engines, providing excellent sealing and structural strength.",
+    },
+    {
+      img: "/images/scorty-auto-parts/rear-half-5s.jpg",
+      title: "Rear Half-5S",
+      desc: "Precision-engineered rear half housing for 5-speed systems, ensuring smooth gear alignment.",
+    },
+    {
+      img: "/images/scorty-auto-parts/rear-half-4s.jpg",
+      title: "Rear Half-4S",
+      desc: "Compact rear half assembly suitable for 4-stroke vehicles, enhancing durability and efficiency.",
+    },
+    {
+      img: "/images/scorty-auto-parts/bracket-cam-sensor.jpg",
+      title: "Bracket Cam Sensor",
+      desc: "High-precision mounting bracket for cam sensors, ensuring stable positioning and accurate readings.",
+    },
+    {
+      img: "/images/scorty-auto-parts/front-cover-fe.jpg",
+      title: "Front Cover - Fe",
+      desc: "Front engine cover made from FE-grade aluminum, offering lightweight performance and long-lasting reliability.",
+    },
+    {
+      img: "/images/scorty-auto-parts/front-cover-4s.jpg",
+      title: "Front Cover - 4S",
+      desc: "Efficient and precision-cast front cover suitable for 4-stroke engines, ensuring reduced oil leakage.",
+    },
+    {
+      img: "/images/scorty-auto-parts/lock-plate.jpg",
+      title: "Lock Plate",
+      desc: "High-tensile lock plate ensuring secure fastening of engine components under high stress conditions.",
+    },
+    {
+      img: "/images/scorty-auto-parts/thermostat-cover.jpg",
+      title: "Assly. Thermostat Cover",
+      desc: "Complete thermostat cover assembly designed to maintain optimal engine cooling performance.",
+    },
+    {
+      img: "/images/scorty-auto-parts/top-cover-4s.jpg",
+      title: "Top Cover - 4S",
+      desc: "Protective top cover for 4-stroke models, designed for easy fitting and improved engine aesthetics.",
+    },
+  ];
+>>>>>>> 6f2bb7e (add animation and video)
 
   return (
-<div
-  className="w-full py-4 mt-24 flex flex-col items-center bg-gray-100 bg-cover bg-center"
-  style={{ backgroundImage: "url('/assets/image/Banner/leave.jpg')" }}
->
+    <div
+      className="w-full bg-fixed py-4 mt-24 flex flex-col items-center bg-gray-100 bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url('/assets/image/background-img/scene-with-photorealistic-logistics-operations-proceedings.jpg')",
+      }}
+    >
       {/* Section Heading */}
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="text-2xl md:text-xl font-bold text-center text-gray-800 mb-4"
+        className="text-2xl md:text-2xl font-bold text-center text-white backdrop-blur-sm px-2 mb-4"
       >
         Explore Our Full Product Range
       </motion.h2>

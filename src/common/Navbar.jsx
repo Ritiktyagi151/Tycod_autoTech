@@ -22,18 +22,26 @@ const Navbar = () => {
   const [showForm, setShowForm] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
+  // Effect to handle navbar style changes on scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
-  const navBg = scrolled ? "bg-white shadow-md" : "bg-transparent";
-  const navText = scrolled ? "text-black" : "text-gray-100";
-  const inputText = scrolled
-    ? "text-black placeholder-gray-500"
-    : "text-white placeholder-white";
-  const borderColor = scrolled ? "border-gray-300" : "border-gray-100";
+  // --- MODIFIED LOGIC ---
+  // Now, the background becomes more opaque on scroll but stays dark.
+  const navBg = scrolled
+    ? "bg-black/80 shadow-md"
+    : "bg-black/20";
+    
+  // Since the background is always dark, the text should always be white.
+  const navText = "text-white";
+  const inputText = "text-white placeholder-gray-300";
+  const borderColor = "border-gray-100";
+  // --- END OF MODIFICATIONS ---
 
   const menuItems = [
     { name: "Home", path: "/" },
@@ -48,34 +56,45 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar */}
       <nav
-        className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${navBg} ${navText}`}
+        // The navBg variable now controls the background completely.
+        className={`fixed top-0 left-0 w-full z-50 backdrop-blur-[2px] transition-all duration-300 ${navBg} ${navText}`}
       >
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-          <Link to="/">
+        {/* Container */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+          {/* Logo with hover effect */}
+          <Link
+            to="/"
+            className="flex items-center transition-transform duration-300 hover:scale-105"
+          >
             <img
-              className="h-10 w-28"
-              src="/assets/image/logo/logo1.png"
+              className="h-10 sm:h-12 w-32"
+              src="/assets/image/logo/logo1.png" // Ensure this path is correct
               alt="Logo"
             />
           </Link>
 
-          {/* Desktop Menu */}
-          <ul className="hidden md:flex items-center space-x-6 font-semibold">
+          {/* Desktop Menu with animated underline on hover */}
+          <ul className="hidden lg:flex items-center space-x-6 font-semibold text-sm xl:text-base">
             {menuItems.map((item) => (
-              <li key={item.name} className={`hover:text-[#BB0F02] cursor-pointer`}>
-                <Link to={item.path}>{item.name}</Link>
+              <li
+                key={item.name}
+                className="relative group transition-colors duration-200 hover:text-[#BB0F02]"
+              >
+                <Link to={item.path} className="block py-2">
+                  {item.name}
+                </Link>
+                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#BB0F02] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
               </li>
             ))}
           </ul>
 
-          {/* Search + Button */}
-          <div className="hidden md:flex items-center space-x-3">
+          {/* Desktop Search + Button with hover effects */}
+          <div className="hidden lg:flex items-center space-x-3">
             <div
-              className={`flex items-center border rounded-full px-4 py-2 w-60 ${borderColor}`}
+              className={`flex items-center border rounded-full px-3 py-2 w-44 xl:w-60 ${borderColor} transition-all duration-300 focus-within:ring-2 focus-within:ring-[#BB0F02] focus-within:ring-offset-2 focus-within:ring-offset-transparent`}
             >
-              <SearchIcon color={scrolled ? "black" : "white"} />
+              <SearchIcon color="white" />
               <input
                 type="text"
                 placeholder="Search products..."
@@ -84,51 +103,77 @@ const Navbar = () => {
             </div>
             <button
               onClick={() => setShowForm(true)}
-              className="bg-[#BB0F02] text-white px-5 py-2 rounded-lg font-medium hover:bg-[#a10c00] transition-all shadow-md"
+              className="bg-[#BB0F02] text-white px-4 py-2 rounded-lg font-medium hover:bg-[#a10c00] transition-all shadow-md text-sm xl:text-base transform hover:scale-105 hover:shadow-lg"
             >
               Get a Quote
             </button>
           </div>
 
-          {/* Mobile Toggle */}
+          {/* Mobile Animated Toggle Button */}
           <button
-            className="md:hidden flex flex-col space-y-1"
+            className="lg:hidden flex flex-col h-6 w-6 justify-center items-center group"
             onClick={() => setIsOpen(!isOpen)}
           >
-            <span className={`w-6 h-0.5 ${navText} bg-current`}></span>
-            <span className={`w-6 h-0.5 ${navText} bg-current`}></span>
-            <span className={`w-6 h-0.5 ${navText} bg-current`}></span>
+            <div
+              className={`h-0.5 w-6 my-1 rounded-full bg-current ${navText} transition-all duration-300 ease-in-out ${
+                isOpen ? "rotate-45 translate-y-2" : ""
+              }`}
+            />
+            <div
+              className={`h-0.5 w-6 my-1 rounded-full bg-current ${navText} transition-all duration-300 ease-in-out ${
+                isOpen ? "opacity-0" : ""
+              }`}
+            />
+            <div
+              className={`h-0.5 w-6 my-1 rounded-full bg-current ${navText} transition-all duration-300 ease-in-out ${
+                isOpen ? "-rotate-45 -translate-y-2" : ""
+              }`}
+            />
           </button>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <ul
-            className={`md:hidden flex flex-col px-6 py-4 space-y-4 font-semibold transition-colors duration-300 ${
-              scrolled ? "bg-white text-black" : "bg-gray-800 text-gray-100"
-            }`}
-          >
+        {/* Mobile Menu with slide-down animation */}
+        <div
+          className={`lg:hidden transition-all duration-500 ease-in-out overflow-hidden ${
+            isOpen ? "max-h-screen" : "max-h-0"
+          } bg-black/90 text-gray-100`}
+        >
+          <ul className="flex flex-col px-6 pt-4 space-y-4 font-medium">
             {menuItems.map((item) => (
               <li key={item.name}>
-                <Link to={item.path}>{item.name}</Link>
+                <Link
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full hover:text-[#BB0F02] transition-colors"
+                >
+                  {item.name}
+                </Link>
               </li>
             ))}
-            <div className={`flex items-center border rounded-full px-4 py-2 ${borderColor}`}>
-              <SearchIcon color={scrolled ? "black" : "white"} />
-              <input
-                type="text"
-                placeholder="Search products..."
-                className={`ml-2 w-full outline-none text-sm ${inputText}`}
-              />
-            </div>
+          </ul>
+
+          {/* Mobile Search */}
+          <div
+            className={`flex items-center border mx-6 my-4 rounded-full px-4 py-2 ${borderColor}`}
+          >
+            <SearchIcon color="white" />
+            <input
+              type="text"
+              placeholder="Search products..."
+              className={`ml-2 w-full bg-transparent outline-none text-sm ${inputText}`}
+            />
+          </div>
+
+          {/* Mobile Button */}
+          <div className="px-6 pb-4">
             <button
               onClick={() => setShowForm(true)}
-              className="bg-[#BB0F02] text-white px-5 py-2 rounded-lg font-medium hover:bg-[#a10c00] transition-all"
+              className="bg-[#BB0F02] text-white w-full py-2 rounded-lg font-medium hover:bg-[#a10c00] transition-all transform hover:scale-105"
             >
               Get a Quote
             </button>
-          </ul>
-        )}
+          </div>
+        </div>
       </nav>
 
       {/* ================= MODAL FORM ================= */}
